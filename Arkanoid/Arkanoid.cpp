@@ -1,5 +1,8 @@
 #include "pch.h"
 #include <iostream>
+#include <string>
+#include <vector>
+#include <memory>
 #include<chrono>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -18,7 +21,6 @@ constexpr int countBlocksX{ 11 }, countBlocksY{ 4 };
 using FrameTime = float;
 
 constexpr float ftStep{ 0.100f }, ftSlice{ 1.f };
-
 
 //struct == class in c++
 struct Ball
@@ -173,7 +175,6 @@ void testCollision(Brick& mBrick, Ball& mBall)
 		mBall.veloxity.y = ballFromTop ? -ballVelocity : ballVelocity;
 
 }
-
 
 struct Game
 {
