@@ -18,6 +18,12 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -26,5 +32,13 @@
     <ClCompile Include="Arkanoid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="FirstImplementation.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="SeconImplementationtxt.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
