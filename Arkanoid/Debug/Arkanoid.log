@@ -1,15 +1,2 @@
 ﻿  Arkanoid.cpp
-c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\arkanoid.cpp(186): error C2039: 'right': is not a member of 'CompositionArkanoid::Entity'
-  c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\ces.h(91): note: see declaration of 'CompositionArkanoid::Entity'
-  c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\arkanoid.cpp(214): note: see reference to function template instantiation 'bool isIntersecting<CompositionArkanoid::Entity,CompositionArkanoid::Entity>(T1 &,T2 &)' being compiled
-          with
-          [
-              T1=CompositionArkanoid::Entity,
-              T2=CompositionArkanoid::Entity
-          ]
-c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\arkanoid.cpp(186): error C2039: 'left': is not a member of 'CompositionArkanoid::Entity'
-  c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\ces.h(91): note: see declaration of 'CompositionArkanoid::Entity'
-c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\arkanoid.cpp(187): error C2039: 'bottom': is not a member of 'CompositionArkanoid::Entity'
-  c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\ces.h(91): note: see declaration of 'CompositionArkanoid::Entity'
-c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\arkanoid.cpp(187): error C2039: 'top': is not a member of 'CompositionArkanoid::Entity'
-  c:\users\jose.encarnacion\documents\visual studio 2017\project\arkanoid\arkanoid\arkanoid\ces.h(91): note: see declaration of 'CompositionArkanoid::Entity'
+  Arkanoid.vcxproj -> C:\Users\jose.encarnacion\Documents\Visual Studio 2017\Project\Arkanoid\Arkanoid\Debug\Arkanoid.exe
