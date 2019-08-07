@@ -162,6 +162,7 @@
     <ClInclude Include="GameBaseEntity.h" />
     <ClInclude Include="GEM.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="State_RunAway.h" />
     <ClInclude Include="Vec2D.h" />

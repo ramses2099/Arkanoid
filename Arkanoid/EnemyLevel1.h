@@ -2,7 +2,7 @@
 
 #include "GameBaseEntity.h"
 #include "State.h"
-#include "Vec2D.h"
+#include "Physics.h"
 #include <iostream>
 
 using namespace jp;
@@ -15,7 +15,7 @@ public:
 	EnemyLevel1(int Id, Vec2D position, const std::string& path)
 		:GameBaseEntity::GameBaseEntity(Id), _path(path)
 	{
-		this->_position = position;
+		this->_physics._position = position;
 		init();
 	};
 	~EnemyLevel1() {};
@@ -28,25 +28,23 @@ public:
 
 	void init()override
 	{
-		if (_texture.loadFromFile(_path)) 
+		if (_texture.loadFromFile(_path))
 		{
 			_sprite.setTexture(_texture);
-			_sprite.setPosition(_position.sf());
+			_sprite.setPosition(this->_physics._position.sf());
 		}
 		//
-		this->m_fMass = 10.f;
-		this->m_force = 5.f;
-		this->m_maxSpeed = 3.0f;
+		this->_physics._maxForce = 0.1f;
+		this->_physics._maxSpeed = 4.0f;
 		//
-		//_acceleration.set((this->m_force / this->m_fMass),0.f);
+				
+		applayForce(Vec2D(4.f, 0.f));
 
-		_acceleration.set(0.5f, 0.f);
-		
 	}
 
-	void draw(sf::RenderWindow& window)override 
+	void draw(sf::RenderWindow& window)override
 	{
-		window.draw(_sprite);	
+		window.draw(_sprite);
 	}
 
 	//
@@ -57,19 +55,26 @@ public:
 	//
 	void State_RunAway(float dt)override
 	{
-		_acceleration.mult(dt);
-		_velocity.add(_acceleration);
-		_velocity.limit(m_maxSpeed);
-		_position.add(_velocity);
-		_sprite.setPosition(_position.sf());
+		this->_physics._acceleration.mult(dt);
+		
+		this->_physics._velocity.add(this->_physics._acceleration);
+		this->_physics._velocity.limit(this->_physics._maxSpeed);
+		this->_physics._position.add(this->_physics._velocity);
+		_sprite.setPosition(this->_physics._position.sf());
 
 
 		std::cout << " dt " << dt << std::endl;
-		std::cout << " accel " << _acceleration.to_str() << std::endl;
-		std::cout << " vel " << _velocity.to_str() << std::endl;
-		std::cout << " pos " << _position.to_str() << std::endl;
-		
+		std::cout << " accel " << this->_physics._acceleration.to_str() << std::endl;
+		std::cout << " vel " << this->_physics._velocity.to_str() << std::endl;
+		std::cout << " pos " << this->_physics._position.to_str() << std::endl;
+
 	}
+	//
+	void applayForce(Vec2D force)
+	{
+		this->_physics._acceleration.add(force);
+	}
+
 
 private:
 	State* m_CurrentState = nullptr;
@@ -78,13 +83,8 @@ private:
 	sf::Sprite _sprite;
 	sf::Texture _texture;
 
-	Vec2D _position;
-	Vec2D _acceleration;
-	Vec2D _velocity;
-
-	float  m_fMass;
-	float m_force;
-	float m_maxSpeed;
-
+	//physics
+	Physics _physics;
+		
 };
 
