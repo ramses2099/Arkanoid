@@ -62,6 +62,8 @@ namespace jp {
 		const std::string to_str();
 		const sf::Vector2f sf();
 
+		static Vec2D sub(Vec2D& v1, Vec2D& v2);
+	
 	    //operation
 
 		//operators
@@ -88,7 +90,7 @@ namespace jp {
 		void operator*=(const Vec2D & v);
 		void operator/=(const Vec2D & v);
 		//operators
-
+			   
 
 	};
 

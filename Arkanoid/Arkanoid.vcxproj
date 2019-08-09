@@ -158,9 +158,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CES.h" />
+    <ClInclude Include="Components.h" />
+    <ClInclude Include="ECS.h" />
     <ClInclude Include="EnemyLevel1.h" />
     <ClInclude Include="GameBaseEntity.h" />
     <ClInclude Include="GEM.h" />
+    <ClInclude Include="MathUtils.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="State.h" />

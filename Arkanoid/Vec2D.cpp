@@ -31,7 +31,7 @@ void jp::Vec2D::set(Vec2D & v)
 void jp::Vec2D::set(sf::Vector2f & v)
 {
 	this->x = v.x;
-	this->x = v.y;
+	this->y = v.y;
 }
 
 void jp::Vec2D::set(float x, float y)
@@ -173,6 +173,16 @@ const std::string jp::Vec2D::to_str()
 const sf::Vector2f jp::Vec2D::sf()
 {
 	return sf::Vector2f(this->x, this->y);
+}
+
+jp::Vec2D jp::Vec2D::sub(Vec2D & v1, Vec2D & v2)
+{
+	float dx = v1.x - v2.x;
+	float dy = v1.y - v2.y;
+
+	jp::Vec2D vd(dx, dy);
+
+	return vd;
 }
 
 jp::Vec2D jp::Vec2D::operator+(const Vec2D & v) const

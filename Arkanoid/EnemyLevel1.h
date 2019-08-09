@@ -20,6 +20,12 @@ public:
 	};
 	~EnemyLevel1() {};
 
+	Vec2D& getPosition()noexcept 
+	{
+		return this->_physics._position;
+	}
+
+
 	void ChangeState(State* pNewStae)
 	{
 		delete this->m_CurrentState;
@@ -62,12 +68,12 @@ public:
 		this->_physics._position.add(this->_physics._velocity);
 		_sprite.setPosition(this->_physics._position.sf());
 
-
+		/*--
 		std::cout << " dt " << dt << std::endl;
 		std::cout << " accel " << this->_physics._acceleration.to_str() << std::endl;
 		std::cout << " vel " << this->_physics._velocity.to_str() << std::endl;
 		std::cout << " pos " << this->_physics._position.to_str() << std::endl;
-
+		--*/
 	}
 	//
 	void applayForce(Vec2D force)
